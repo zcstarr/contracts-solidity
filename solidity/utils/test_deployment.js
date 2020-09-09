@@ -2,12 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const Web3 = require('web3');
 
-const CFG_FILE_NAME = process.argv[2];
-const NODE_ADDRESS = process.argv[3];
-const PRIVATE_KEY = process.argv[4];
+const CFG_FILE_NAME = "./config.json"//process.argv[2];
+const NODE_ADDRESS = "http://localhost:9000" //process.argv[3];
+const PRIVATE_KEY =  "0x4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d"// process.argv[4];
 
-const ARTIFACTS_DIR = path.resolve(__dirname, '../build');
-
+const ARTIFACTS_DIR = path.resolve(__dirname, '../build/') + "/";
 const MIN_GAS_LIMIT = 100000;
 
 const getConfig = () => {
@@ -32,7 +31,7 @@ const scan = async (message) => {
 const getGasPrice = async (web3) => {
     while (true) {
         const nodeGasPrice = await web3.eth.getGasPrice();
-        const userGasPrice = await scan(`Enter gas-price or leave empty to use ${nodeGasPrice}: `);
+        const userGasPrice=''; //= await scan(`Enter gas-price or leave empty to use ${nodeGasPrice}: `);
         if (/^\d+$/.test(userGasPrice)) {
             return userGasPrice;
         }
@@ -65,6 +64,7 @@ const getTransactionReceipt = async (web3) => {
 const send = async (web3, account, gasPrice, transaction, value = 0) => {
     while (true) {
         try {
+            console.log("--------sending-------")
             const tx = {
                 to: transaction._parent._address,
                 data: transaction.encodeABI(),
@@ -219,7 +219,7 @@ const run = async () => {
         if (type !== 0 && amounts.every(amount => amount > 0)) {
             for (let i = 0; i < converter.reserves.length; i++) {
                 const reserve = converter.reserves[i];
-                if (reserve.symbol !== 'ETH') {
+                if (reserve.symbol !== 'ETH' || reserve.symbol !== 'ETC') {
                     await execute(deployed(web3, 'ERC20Token', tokens[i]).methods.approve(converterBase._address, amounts[i]));
                 }
 

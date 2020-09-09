@@ -1,0 +1,165 @@
+{
+    "phase": 10,
+    "contractRegistry": {
+        "name": "ContractRegistry",
+        "addr": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+        "args": ""
+    },
+    "converterFactory": {
+        "name": "ConverterFactory",
+        "addr": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
+        "args": ""
+    },
+    "bancorFormula": {
+        "name": "BancorFormula",
+        "addr": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+        "args": ""
+    },
+    "bancorNetwork": {
+        "name": "BancorNetwork",
+        "addr": "0x254dffcd3277C0b1660F6d42EFbB754edaBAbC2B",
+        "args": "000000000000000000000000e78a0f7e598cc8b0bb87894b0f60dd2a88d6a8ab"
+    },
+    "conversionPathFinder": {
+        "name": "ConversionPathFinder",
+        "addr": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550",
+        "args": "000000000000000000000000e78a0f7e598cc8b0bb87894b0f60dd2a88d6a8ab"
+    },
+    "converterUpgrader": {
+        "name": "ConverterUpgrader",
+        "addr": "0xD833215cBcc3f914bD1C9ece3EE7BF8B14f841bb",
+        "args": "000000000000000000000000e78a0f7e598cc8b0bb87894b0f60dd2a88d6a8ab000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    },
+    "converterRegistry": {
+        "name": "ConverterRegistry",
+        "addr": "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7",
+        "args": "000000000000000000000000e78a0f7e598cc8b0bb87894b0f60dd2a88d6a8ab"
+    },
+    "converterRegistryData": {
+        "name": "ConverterRegistryData",
+        "addr": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+        "args": "000000000000000000000000e78a0f7e598cc8b0bb87894b0f60dd2a88d6a8ab"
+    },
+    "liquidTokenConverterFactory": {
+        "name": "LiquidTokenConverterFactory",
+        "addr": "0x59d3631c86BbE35EF041872d502F218A39FBa150",
+        "args": ""
+    },
+    "liquidityPoolV1ConverterFactory": {
+        "name": "LiquidityPoolV1ConverterFactory",
+        "addr": "0x0290FB167208Af455bB137780163b7B7a9a10C16",
+        "args": ""
+    },
+    "reserves": [
+        {
+            "symbol": "XXX",
+            "decimals": 18,
+            "supply": "1829101"
+        },
+        {
+            "symbol": "YYY",
+            "decimals": 18,
+            "supply": "3603801"
+        },
+        {
+            "symbol": "XYZ",
+            "decimals": 18,
+            "supply": "3782823"
+        },
+        {
+            "symbol": "BNT",
+            "decimals": 18,
+            "supply": "6914855"
+        }
+    ],
+    "converters": [
+        {
+            "type": 1,
+            "symbol": "ETHBNT",
+            "decimals": 18,
+            "fee": "0.1%",
+            "reserves": [
+                {
+                    "symbol": "ETH",
+                    "weight": "50%",
+                    "balance": "21"
+                },
+                {
+                    "symbol": "BNT",
+                    "weight": "50%",
+                    "balance": "3092"
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "symbol": "XXXBNT",
+            "decimals": 18,
+            "fee": "0.1%",
+            "reserves": [
+                {
+                    "symbol": "XXX",
+                    "weight": "50%",
+                    "balance": "582"
+                },
+                {
+                    "symbol": "BNT",
+                    "weight": "50%",
+                    "balance": "2817"
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "symbol": "YYYBNT",
+            "decimals": 18,
+            "fee": "0.2%",
+            "reserves": [
+                {
+                    "symbol": "YYY",
+                    "weight": "50%",
+                    "balance": "312"
+                },
+                {
+                    "symbol": "BNT",
+                    "weight": "50%",
+                    "balance": "270"
+                }
+            ]
+        },
+        {
+            "type": 2,
+            "symbol": "XYZBNT",
+            "decimals": 18,
+            "fee": "0.2%",
+            "reserves": [
+                {
+                    "symbol": "YYY",
+                    "weight": "50%",
+                    "balance": "920",
+                    "oracle": "0xaaa...."
+                },
+                {
+                    "symbol": "BNT",
+                    "weight": "50%",
+                    "balance": "6552",
+                    "oracle": "0xbbb...."
+                }
+            ]
+        },
+        {
+            "type": 0,
+            "symbol": "ZZZ",
+            "decimals": 18,
+            "fee": "0.3%",
+            "reserves": [
+                {
+                    "symbol": "BNT",
+                    "weight": "10%",
+                    "balance": "920"
+                }
+            ]
+        }
+    ]
+
+}
